@@ -3,13 +3,13 @@ services:
   server:
     container_name: air
     build:
-      dockerfile: build/development/Dockerfile
-      context: ../
+      dockerfile: Dockerfile.dev
     working_dir: /app
     ports:
       - 8080:8080
     volumes:
-      - ../:/app
+      - ./:/app
+      - ./config.json:/app/config.json
     networks:
       - server
 
