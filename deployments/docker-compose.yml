@@ -1,0 +1,18 @@
+version: "3"
+services:
+  server:
+    container_name: air
+    build:
+      dockerfile: build/development/Dockerfile
+      context: ../
+    working_dir: /app
+    ports:
+      - 8080:8080
+    volumes:
+      - ../:/app
+    networks:
+      - server
+
+networks: 
+  server:
+    driver: bridge
